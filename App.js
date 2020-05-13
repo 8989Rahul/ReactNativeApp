@@ -6,27 +6,33 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
+  TextInput,
 } from 'react-native';
 
 const App = () => {
-  const [name, setName] = useState('Rahul');
-  const [person, setPerson] = useState({name: 'hey', age: 23});
-
-  const onclickHandler = () => {
-    setName('Rahul Daghale');
-    setPerson({name: 'Rahul', age: 24});
-  };
+  const [person, setPerson] = useState([
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+    {name: 'Rahul'},
+  ]);
 
   return (
     <View style={Styles.container}>
-      <Text>My name is {name} !</Text>
-      <Text>
-        This is {person.name} and the AGE is {person.age}
-      </Text>
-      <View style={Styles.buttonContainer}>
-        <Button title="Update State" onPress={onclickHandler} />
-      </View>
+      <ScrollView>
+        {person.map((item, i) => {
+          return (
+            <Text style={Styles.item} key={i}>
+              {item.name}
+            </Text>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
@@ -35,11 +41,16 @@ export default App;
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonContainer: {
+    backgroundColor: '#fff',
     paddingTop: 40,
+    paddingHorizontal: 20,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  },
+  item: {
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: 'pink',
+    fontSize: 24,
   },
 });
