@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Sample from './Components/sample';
-import Todo from './Components/Todo';
+import TodoApp from './Components/Todos/TodoApp';
+// import {View} from 'react-native';
 
 const App = () => {
   return (
-    <Todo />
+    // <View>
+    <TodoApp />
+    // </View>
     // <Sample />
   );
 };
