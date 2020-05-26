@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements';
 
 const Header = () => {
   return (
     <View style={Styles.header}>
-      <Icon name="sc-telegram" type="evilicon" color="#517fa4" />
       <Text style={Styles.title}>My Todos</Text>
     </View>
   );

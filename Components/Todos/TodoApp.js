@@ -14,9 +14,9 @@ import AddTodos from './AddTodos';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([
-    {text: 'Buy Coffee', key: 1},
-    {text: 'Create an app', key: 2},
-    {text: 'play on the switch', key: 3},
+    {text: 'Buy Coffee', key: '1'},
+    {text: 'Create an app', key: '2'},
+    {text: 'play on the switch', key: '3'},
   ]);
 
   const onPressHandler = key => {
@@ -46,7 +46,6 @@ const TodoApp = () => {
           <View style={styles.list}>
             <FlatList
               data={todos}
-              keyExtractor={item => item.key}
               renderItem={({item}) => (
                 <TodoItem item={item} onPressHandler={onPressHandler} />
               )}
